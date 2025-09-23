@@ -1,0 +1,195 @@
+.lista-livros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card-livro {
+  background: #fdf6f0;
+  border: 1px solid #d8c3a5;
+  border-radius: 12px;
+  width: 180px;
+  text-align: center;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+  transition: transform .2s;
+}
+
+.card-livro img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-livro:hover {
+  transform: scale(1.05);
+}
+.principal form {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff8f2;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #c4a484;
+}
+.principal label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.principal input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #c4a484;
+  border-radius: 5px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Merriweather', 'Nunito', serif;
+  background-color: #fdf6f0; /* tom de papel antigo */
+  color: #3a2e2a; /* marrom suave */
+  line-height: 1.6;
+}
+
+/* === Cabeçalho === */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff8f2;
+  border-bottom: 2px solid #c4a484;
+}
+.logo img {
+  height: 50px;
+}
+
+/* Barra de busca */
+.busca {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 2rem;
+}
+.busca input {
+  width: 60%;
+  padding: 0.5rem;
+  border: 1px solid #c4a484;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+.busca button {
+  background-color: #c4a484;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.busca button:hover {
+  background-color: #a67c52;
+}
+
+.acesso a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #5c3a21;
+  font-weight: bold;
+}
+.acesso a:hover {
+  text-decoration: underline;
+}
+
+/* === Conteúdo Principal === */
+.principal {
+  text-align: center;
+  padding: 2rem;
+}
+.livro-central img {
+  width: 200px;
+  margin: 1rem 0;
+}
+.acoes {
+  margin-top: 1rem;
+}
+.botao {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #c4a484;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.botao:hover {
+  background-color: #a67c52;
+}
+
+/* Cards de livros */
+.lista-livros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1.5rem;
+}
+.card-livro {
+  width: 140px;
+  background-color: #fff8f2;
+  border: 1px solid #c4a484;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card-livro:hover {
+  transform: translateY(-5px);
+}
+.card-livro img {
+  width: 80px;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
+/* === Rodapé === */
+.rodape {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #fff8f2;
+  text-align: center;
+  border-top: 2px solid #c4a484;
+}
+.rodape img {
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+.rodape a {
+  color: #5c3a21;
+  text-decoration: none;
+}
+.rodape a:hover {
+  text-decoration: underline;
+}
+
+/* === Responsivo === */
+@media (max-width: 768px) {
+  .busca input {
+    width: 50%;
+  }
+  .lista-livros {
+    gap: 1rem;
+  }
+}

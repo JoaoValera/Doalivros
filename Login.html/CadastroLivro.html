@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doar Livro - DoeLivros</title>
+  <link rel="stylesheet" href="../index.html">
+  <link rel="stylesheet" href="CadastroLivros.css">
+</head>
+<body>
+
+  <!-- TOPO -->
+  <header class="topo">
+    <div class="logo">
+      <img src="../ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
+    </div>
+
+    <nav class="acesso">
+      <a href="./login.html">Login</a> |
+      <a href="./cadastro.html/Cadastro1.html">Registrar</a> |
+      <a href="../index.html">Início</a>
+    </nav>
+  </header>
+
+  <!-- FORMULÁRIO DE DOAÇÃO -->
+  <main class="principal">
+    <h1>Doar um Livro</h1>
+    <form id="formDoarLivro">
+      <label for="nomeLivro">Nome do Livro:</label>
+      <input type="text" id="nomeLivro" name="nomeLivro" placeholder="Digite o nome do livro" required>
+
+      <label for="autorLivro">Autor:</label>
+      <input type="text" id="autorLivro" name="autorLivro" placeholder="Digite o nome do autor" required>
+
+      <label for="sinopseLivro">Sinopse:</label>
+      <textarea id="sinopseLivro" name="sinopseLivro" rows="5" placeholder="Escreva uma breve sinopse" required></textarea>
+
+      <button type="submit">Cadastrar Livro 📚</button>
+    </form>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <img src="../ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
+    <p>© Fire Company – Desenvolvido por João Vitor</p>
+    <a href="https://www.linkedin.com/in/seu-linkedin">Meu LinkedIn</a>
+  </footer>
+
+  <script src="Firebase.js" type="module"></script>
+  <script>
+    const form = document.getElementById('formDoarLivro');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('nomeLivro').value;
+      const autor = document.getElementById('autorLivro').value;
+      const sinopse = document.getElementById('sinopseLivro').value;
+
+      // Aqui você adiciona o código do Firebase para salvar o livro
+      console.log("Livro cadastrado:", { nome, autor, sinopse });
+
+      alert("Livro cadastrado com sucesso!");
+      form.reset();
+    });
+  </script>
+</body>
+</html>

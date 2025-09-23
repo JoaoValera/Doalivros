@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - DoaLivros</title>
+  <link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+  <main class="principal">
+    <h2>Registrar</h2>
+    <form id="formCadastro">
+      <label>E-mail</label>
+      <input type="email" id="cadEmail" required>
+      
+      <label>Telefone</label>
+      <input type="tel" id="cadTelefone" required>
+      
+      <label>Senha</label>
+      <input type="password" id="cadSenha" required>
+      
+      <button type="submit" class="botao">Criar Conta</button>
+    </form>
+    <p>Já tem conta? <a href="../login.html">Entre aqui</a></p>
+  </main>
+<script src="./js/auth.js"></script>
+<script type="module" src="./js/Firebase.js"></script>
+</body>
+</html>
