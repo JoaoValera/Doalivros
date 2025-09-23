@@ -11,14 +11,20 @@ form.addEventListener('submit', (e) => {
 
   cadastrarUsuario(email, senha)
     .then((userCredential) => {
+      // Mostra alerta que deu certo
       alert("Usuário cadastrado com sucesso!");
-      console.log(userCredential.user);
-      form.reset();
+      console.log(userCredential.user); // mostra no console do navegador
+
+      form.reset(); // limpa o formulário
+
+      // Redireciona para a página de login
+      window.location.href = "../login.html"; 
     })
     .catch((error) => {
       alert("Erro: " + error.message);
       console.error(error);
     });
 });
+
 
 
