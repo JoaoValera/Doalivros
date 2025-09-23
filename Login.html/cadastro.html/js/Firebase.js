@@ -1,6 +1,6 @@
-// firebase.js
+// js/firebase.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -17,7 +17,8 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db   = getFirestore(app);
 
-console.log("✅ Firebase conectado:", app.name);
-
+export function cadastrarUsuario(email, senha) {
+  return createUserWithEmailAndPassword(auth, email, senha);
+}
 
 
