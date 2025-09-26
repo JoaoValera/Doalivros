@@ -1,12 +1,13 @@
 // Local: /Js/adote.js
 
+// 1. Imports do Firebase e Firestore
 import { db } from './Firebase.js'; 
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// Pegando a referência da lista de livros no HTML
+// 2. Referência ao local onde os cards serão exibidos
 const listaLivros = document.getElementById('listaLivros');
 
-// Inicia a função de carregamento assim que o script é executado
+// 3. Inicia a função de carregamento após o HTML carregar
 document.addEventListener('DOMContentLoaded', carregarLivros);
 
 async function carregarLivros() {
@@ -49,9 +50,8 @@ async function carregarLivros() {
         });
 
     } catch (error) {
-        // Em caso de erro (como permissão negada), exibe uma mensagem no console e na tela
+        // Em caso de erro
         listaLivros.innerHTML = '<h2>Erro ao carregar livros. Verifique o Console (F12) para detalhes.</h2>';
         console.error("Erro ao buscar documentos (VERIFIQUE AS REGRAS DO FIRESTORE!): ", error);
     }
 }
-// Remove o "carregarLivros();" que estava solto para usar o evento DOMContentLoaded
