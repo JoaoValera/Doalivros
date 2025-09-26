@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Doar Livro - DoeLivros</title>
-  <link rel="stylesheet" href="../index.html">
-  <link rel="stylesheet" href="CadastroLivros.css">
+  <link rel="stylesheet" href="CSS/CadastroLivros.css">
 </head>
 <body>
 
@@ -16,9 +15,9 @@
     </div>
 
     <nav class="acesso">
-      <a href="./login.html">Login</a> |
-      <a href="./cadastro.html/Cadastro1.html">Registrar</a> |
-      <a href="../index.html">Início</a>
+      <a href="login1.html">Login</a> |
+      <a href="Cadastro1.html">Registrar</a> |
+      <a href="index.html">Início</a>
     </nav>
   </header>
 
@@ -47,21 +46,41 @@
   </footer>
 
   <script src="Firebase.js" type="module"></script>
-  <script>
-    const form = document.getElementById('formDoarLivro');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+ <script type="module">
+  import { db } from './Js/Firebase.js'; // Ajustei para './Js/' se essa é a pasta correta
+  import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-      const nome = document.getElementById('nomeLivro').value;
-      const autor = document.getElementById('autorLivro').value;
-      const sinopse = document.getElementById('sinopseLivro').value;
+  const form = document.getElementById('formDoarLivro');
 
-      // Aqui você adiciona o código do Firebase para salvar o livro
-      console.log("Livro cadastrado:", { nome, autor, sinopse });
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const nome    = document.getElementById('nomeLivro').value;
+    const autor   = document.getElementById('autorLivro').value;
+    const sinopse = document.getElementById('sinopseLivro').value;
+
+    try {
+      // 1. Salva no Firestore
+      await addDoc(collection(db, "livros"), {
+        nome,
+        autor,
+        sinopse,
+        criadoEm: new Date()
+      });
 
       alert("Livro cadastrado com sucesso!");
-      form.reset();
-    });
-  </script>
+      form.reset(); // Opcional: limpa o formulário
+
+      // 2. 👉 Redireciona para a página inicial
+      // CORREÇÃO: Usa o caminho direto, pois estão na mesma pasta (a raiz)
+      window.location.href = "index.html"; 
+
+    } catch (err) {
+      console.error("Erro ao cadastrar livro:", err);
+      alert("Erro ao cadastrar livro: " + err.message);
+    }
+  });
+</script>
+
 </body>
 </html>

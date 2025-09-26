@@ -4,57 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DoeLivros</title>
-  <link rel="stylesheet" href="DoaLivros.css">
+  <link rel="stylesheet" href="./CSS/Doalivros.css"> 
 </head>
 <body>
 
-  <!-- TOPO -->
   <header class="topo">
     <div class="logo">
-      <img src="ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
+      <img src="./ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
     </div>
 
-    <!-- BARRA DE PESQUISA -->
     <form class="busca" onsubmit="buscarLivro(event)">
       <input type="text" id="campoBusca" placeholder="Buscar livros...">
       <button type="submit">🔍</button>
     </form>
 
-    <!-- LOGIN/REGISTRO -->
     <nav class="acesso">
-      <a href="Login.html/login.html">Login</a> |
-      <a href="Login.html/cadastro.html/Cadastro1.html">Registrar</a>
+      <a href="login1.html">Login</a> |
+      <a href="Cadastro1.html">Registrar</a>
     </nav>
   </header>
 
-  <!-- CENTRO -->
   <main class="principal">
     <div class="livro-central">
-      <img src="ImgLogo/ImgDoalivros2.png" alt="Livro Aberto">
+      <img src="./ImgLogo/ImgDoalivros2.png" alt="Livro Aberto">
       <div class="acoes">
-        <a href="./Login.html/CadastroLivro.html" class="botao">📚 Doar um Livro?</a>
-        <a href="./Login.html/Adote.HTML" class="botao">🤗 Adotar um Livro</a>
+        <a href="CadastroLivro.html" class="botao">📚 Doar um Livro?</a>
+        <a href="Adote.html" class="botao">🤗 Adotar um Livro</a>
       </div>
     </div>
-
-    <!-- LISTA DE LIVROS REGISTRADOS -->
-    <section class="lista-livros">
-      <!-- Cada livro vai ser um card -->
-      <div class="card-livro">
-        <img src="imagens/livro-aberto.png" alt="Livro">
-        <p>Senhor dos Anéis</p>
-      </div>
-      <!-- repita para outros livros -->
-    </section>
   </main>
 
-  <!-- RODAPÉ -->
   <footer class="rodape">
     <img src="./ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
     <p>© Fire Company – Desenvolvido por João Vitor</p>
     <a href="https://www.linkedin.com/in/seu-linkedin">Meu LinkedIn</a>
   </footer>
 
-<script src="DoaLivros.js"></script>
+<script type="module" src="./Js/DoaLivros.js"></script> 
 </body>
-</html>
+</html>>

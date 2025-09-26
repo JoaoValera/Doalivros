@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adotar um Livro – DoaLivros</title>
+    <link rel="stylesheet" href="CSS/Adote.css" />
+</head>
+<body>
+    <header class="topo">
+        <div class="logo">
+            <img src="./ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
+        </div>
+
+        <form class="busca" onsubmit="buscarLivro(event)">
+            <input type="text" id="campoBusca" placeholder="Buscar livros...">
+            <button type="submit">🔍</button>
+        </form>
+
+        <nav class="acesso">
+            <a href="login1.html">Login</a> |
+            <a href="Cadastro1.html">Registrar</a>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <h2>Livros Disponíveis para Adoção</h2>
+        <section id="listaLivros" class="lista-livros">
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <img src="./ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
+        <p>© Fire Company – Desenvolvido por João Vitor</p>
+        <a href="#">Meu LinkedIn</a>
+    </footer>
+
+    <script>
+        function buscarLivro(e) {
+            e.preventDefault();
+            const termo = document.getElementById('campoBusca').value.toLowerCase();
+
+            document.querySelectorAll('.card-livro').forEach(card => {
+                // A função busca o título dentro do <h3> do card (criado no adote.js)
+                const titulo = card.querySelector('h3').textContent.toLowerCase();
+                card.style.display = titulo.includes(termo) ? 'flex' : 'none';
+            });
+        }
+    </script>
+
+    <script type="module" src="./Js/adote.js"></script>
+
+</body>
+</html>
