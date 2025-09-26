@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adotar um Livro – DoaLivros</title>
-    <link rel="stylesheet" href="CSS/Adote.css" />
+    <link rel="stylesheet" href="../CSS/Adote.css" />
 </head>
 <body>
     <header class="topo">
         <div class="logo">
-            <img src="./ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
+            <img src="../ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
         </div>
 
         <form class="busca" onsubmit="buscarLivro(event)">
@@ -30,7 +30,7 @@
     </main>
 
     <footer class="rodape">
-        <img src="./ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
+        <img src="../ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
         <p>© Fire Company – Desenvolvido por João Vitor</p>
         <a href="#">Meu LinkedIn</a>
     </footer>
@@ -41,14 +41,13 @@
             const termo = document.getElementById('campoBusca').value.toLowerCase();
 
             document.querySelectorAll('.card-livro').forEach(card => {
-                // A função busca o título dentro do <h3> do card (criado no adote.js)
                 const titulo = card.querySelector('h3').textContent.toLowerCase();
                 card.style.display = titulo.includes(termo) ? 'flex' : 'none';
             });
         }
     </script>
 
-    <script type="module" src="./Js/adote.js"></script>
+    <script type="module" src="../Js/adote.js"></script>
 
 </body>
 </html>

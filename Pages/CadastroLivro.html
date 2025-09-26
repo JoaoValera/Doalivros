@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Doar Livro - DoeLivros</title>
-  <link rel="stylesheet" href="CSS/CadastroLivros.css">
+  <link rel="stylesheet" href="../CSS/CadastroLivros.css">
 </head>
 <body>
 
-  <!-- TOPO -->
   <header class="topo">
     <div class="logo">
-      <img src="../ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
+      <img src="./ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
     </div>
 
     <nav class="acesso">
@@ -21,7 +20,6 @@
     </nav>
   </header>
 
-  <!-- FORMULÁRIO DE DOAÇÃO -->
   <main class="principal">
     <h1>Doar um Livro</h1>
     <form id="formDoarLivro">
@@ -38,16 +36,16 @@
     </form>
   </main>
 
-  <!-- RODAPÉ -->
   <footer class="rodape">
-    <img src="../ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
+    <img src="./ImgLogo/ImgDoalivros2.png" alt="Logo DoaLivros">
     <p>© Fire Company – Desenvolvido por João Vitor</p>
     <a href="https://www.linkedin.com/in/seu-linkedin">Meu LinkedIn</a>
   </footer>
 
-  <script src="Firebase.js" type="module"></script>
  <script type="module">
-  import { db } from './Js/Firebase.js'; // Ajustei para './Js/' se essa é a pasta correta
+  // O código aqui é executado como um módulo no contexto da página.
+  // Importação CORRIGIDA: Usa o caminho ./Js/ porque o script está sendo executado na Raiz.
+  import { db } from './Js/Firebase.js'; 
   import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
   const form = document.getElementById('formDoarLivro');
@@ -71,8 +69,7 @@
       alert("Livro cadastrado com sucesso!");
       form.reset(); // Opcional: limpa o formulário
 
-      // 2. 👉 Redireciona para a página inicial
-      // CORREÇÃO: Usa o caminho direto, pois estão na mesma pasta (a raiz)
+      // 2. Redireciona para a página inicial (CORRIGIDO: index.html na Raiz)
       window.location.href = "index.html"; 
 
     } catch (err) {
