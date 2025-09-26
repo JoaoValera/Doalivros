@@ -3,7 +3,11 @@
 import { db } from './Firebase.js'; 
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+// Pegando a referência da lista de livros no HTML
 const listaLivros = document.getElementById('listaLivros');
+
+// Inicia a função de carregamento assim que o script é executado
+document.addEventListener('DOMContentLoaded', carregarLivros);
 
 async function carregarLivros() {
     // Exibe uma mensagem de carregamento inicial
@@ -28,12 +32,12 @@ async function carregarLivros() {
             
             // Cria o elemento HTML do card
             const card = document.createElement('div');
-            // IMPORTANTE: Use a mesma classe que você definiu na função de busca do HTML
             card.classList.add('card-livro'); 
             
             // Monta o HTML do card
             card.innerHTML = `
-                <img src="./ImgLogo/ImgDoalivros2.png" alt="Capa do Livro"> 
+                <img src="../ImgLogo/ImgDoalivros2.png" alt="Capa do Livro"> 
+                
                 <h3>${livro.nome}</h3>
                 <p>Autor: ${livro.autor}</p>
                 <p class="sinopse-texto">${(livro.sinopse || '').substring(0, 100)}...</p> 
@@ -50,6 +54,4 @@ async function carregarLivros() {
         console.error("Erro ao buscar documentos (VERIFIQUE AS REGRAS DO FIRESTORE!): ", error);
     }
 }
-
-// Inicia a função de carregamento assim que o script é executado
-carregarLivros();
+// Remove o "carregarLivros();" que estava solto para usar o evento DOMContentLoaded
